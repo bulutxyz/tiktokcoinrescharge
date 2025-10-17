@@ -445,9 +445,9 @@
 
           if (countdownElement) countdownElement.textContent = `${minutes}:${seconds}`;
 
-          if (timer <= 297) {
-            clearInterval(countdownInterval);
-            loadingScreen.style.display = 'none';
+          if (timer <= 298) {
+        clearInterval(countdownInterval);
+        loadingScreen.style.display = 'none';
             if (successMessage) {
               const coinsText = Number(selectedAmount || 0).toLocaleString();
               successMessage.textContent = `You recharged ${coinsText} Coins. You can use Coins to send virtual Gifts.`;
@@ -539,8 +539,12 @@
       });
 
       successGoBackBtn.addEventListener('click', () => {
-        successPopup.style.display = 'none';
-      });
+    successPopup.style.display = 'none';
+    // Kullanıcı adı kutusunu temizle
+    if (usernameInput) {
+      usernameInput.value = '';
+    }
+  });
 
       // Modal dışına tıklayınca kapat
       window.addEventListener('click', (event) => {
